@@ -4,7 +4,8 @@ const AdminBroMongoose = require("@admin-bro/mongoose");
 const AdminBro = require("admin-bro");
 const app = express();
 const mongoose = require("mongoose");
-const port = 8000;
+// const port = 8000;
+const port = process.env.PORT || 800;
 const Ott = require("./models/OttModels");
 const cors = require("cors");
 
