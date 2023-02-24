@@ -56,6 +56,7 @@ app.get("/addnewsfasdf", async (req, res) => {
 });
 
 const doEverything = async () => {
+    mongoose.set("strictQuery", false);
     mongoose
         .connect(
             "mongodb+srv://jashan:jashan@cluster0.s70xibz.mongodb.net/?retryWrites=true&w=majority",
