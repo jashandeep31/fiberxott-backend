@@ -1,7 +1,7 @@
 const express = require("express");
-const AdminBroExpress = require("@admin-bro/express");
-const AdminBroMongoose = require("@admin-bro/mongoose");
-const AdminBro = require("admin-bro");
+// const AdminBroExpress = require("@admin-bro/express");
+// const AdminBroMongoose = require("@admin-bro/mongoose");
+// const AdminBro = require("admin-bro");
 const app = express();
 const mongoose = require("mongoose");
 // const port = 8000;
@@ -72,14 +72,14 @@ const doEverything = async () => {
             console.log("Error connecting to database", err);
         });
 
-    AdminBro.registerAdapter(AdminBroMongoose);
-    const adminBro = new AdminBro({
-        databases: [mongoose],
-        rootPath: "/admin",
-    });
-    const router = AdminBroExpress.buildRouter(adminBro);
+    // AdminBro.registerAdapter(AdminBroMongoose);
+    // const adminBro = new AdminBro({
+    //     databases: [mongoose],
+    //     rootPath: "/admin",
+    // });
+    // const router = AdminBroExpress.buildRouter(adminBro);
 
-    app.use(adminBro.options.rootPath, router);
+    // app.use(adminBro.options.rootPath, router);
     app.listen(8000, () =>
         console.log("AdminBro is under localhost:8000/admin")
     );
